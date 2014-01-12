@@ -1,0 +1,51 @@
+" vim: ft=vim
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'saltstack/salt-vim'
+Bundle 'ingydotnet/yaml-vim'
+Bundle 'groenewege/vim-less'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'ap/vim-css-color'
+Bundle 'Glench/Vim-Jinja2-Syntax'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'mattn/emmet-vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'ervandew/supertab'
+Bundle 'marijnh/tern_for_vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'majutsushi/tagbar'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-surround'
+
+let g:vim_markdown_folding_disabled=1
+
+"remove autocomplete preview
+let g:SuperTabClosePreviewOnPopupClose = 1
+
+"syntax check
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+set statusline=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+"fix the rainbows
+source ~/.vim/colors
+au VimEnter * RainbowParenthesesToggle
+
+"function mappings
+nnoremap <F2> :NERDTreeToggle<cr>
+nnoremap <F3> :TagbarToggle<cr>
+nnoremap <F4> :RainbowParenthesesToggleAll<cr>
+
+filetype plugin indent on
