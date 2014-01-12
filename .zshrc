@@ -63,5 +63,5 @@ setopt RM_STAR_WAIT
 export PATH=$PATH:/home/administrator/.gem/ruby/2.0.0/bin:/home/administrator/android-sdk-linux/tools:/home/administrator/android-sdk-linux/platform-tools
 export USE_CCACHE=1
 
-. /etc/profile.d/vte.sh
-. ~/.python/funcs.sh
+[ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
+[ -f ~/.python/funcs.sh ] && source ~/.python/funcs.sh
