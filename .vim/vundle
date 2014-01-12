@@ -24,6 +24,8 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-surround'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-easytags'
 
 let g:vim_markdown_folding_disabled=1
 
@@ -42,6 +44,9 @@ let g:syntastic_auto_loc_list = 1
 "fix the rainbows
 source ~/.vim/colors
 au VimEnter * RainbowParenthesesToggle
+
+"easytags
+set tags+=~/.vimtags
 
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
