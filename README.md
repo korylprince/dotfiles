@@ -4,7 +4,7 @@ dotfiles
 This is my repo of useful dot files mainly for vim and zsh for use in programming. Note: I'm running Arch so python3 is the default python.
 
 #Initial Setup#
-Run `makelns.sh` to create all the links. Make sure you read it first to see what it's doing!
+Run `makelns.sh` to create all the links. It won't overwrite your files, but make sure you read it first to see what it's doing!
 
 #Vim Setup#
 Install a newer (7.3+) vim and [vundle](https://github.com/gmarik/vundle). Run `:BundleInstall` to install all the vim plugins. Some of the plugins will require external programs.
