@@ -41,6 +41,15 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
+"skip html by default
+let g:syntastic_mode_map = { 'mode': 'active',
+            \ 'active_filetypes': [],
+            \ 'passive_filetypes': ['html'] }
+
+"don't freak about about angular attrs
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", "> is not recognized"]
+
+
 "fix the rainbows
 source ~/.vim/colors
 au VimEnter * RainbowParenthesesToggle
@@ -48,9 +57,19 @@ au VimEnter * RainbowParenthesesToggle
 "easytags
 set tags+=~/.vimtags
 
+function! ToggleSyntasticErrors()
+    let old_last_winnr = winnr('$')
+    SyntasticReset
+    if old_last_winnr == winnr('$')
+        " Nothing was closed, open syntastic error location panel
+        SyntasticCheck
+    endif
+endfunction
+
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
 nnoremap <F4> :RainbowParenthesesToggleAll<cr>
+nnoremap <F5> :call ToggleSyntasticErrors()<cr>
 
 filetype plugin indent on
