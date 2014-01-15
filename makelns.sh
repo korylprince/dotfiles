@@ -6,7 +6,7 @@ SUCCESS=true
 
 for f in ${file_list[@]}
 do
-    dirname $HOME/$f;
+    mkdir -p `dirname $HOME/$f`;
     if [ ! -h $HOME/$f ];
         then if [ -a $HOME/$f ];
             then echo "WARNING: $HOME/$f already exists and is not a symlink"; 
