@@ -16,7 +16,7 @@ img_path = os.path.expanduser('~/.background.jpg')
 
 
 def setbg():
-    os.system('nitrogen --restore &>/dev/null 2&>1')
+    os.system('nitrogen --restore &>/dev/null 2>&1')
 
 
 def printd(msg):
