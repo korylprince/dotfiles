@@ -41,7 +41,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-"skip html by default
+"don't syntax check by default
 let g:syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': [],
             \ 'passive_filetypes': [] }
@@ -73,5 +73,6 @@ nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
 nnoremap <F4> :RainbowParenthesesToggleAll<cr>
 nnoremap <F5> :call ToggleSyntasticErrors()<cr>
+autocmd BufNewFile,BufRead *.go nnoremap <F12> :!go run %<cr>
 
 filetype plugin indent on
