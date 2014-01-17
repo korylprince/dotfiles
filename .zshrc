@@ -60,13 +60,12 @@ bindkey '^R' history-incremental-search-backward
 setopt RM_STAR_WAIT
 
 #android + PATHs
-export PATH=$PATH:/home/administrator/android-sdk-linux/tools:/home/administrator/android-sdk-linux/platform-tools
+export PATH=/home/administrator/android-sdk-linux/tools:/home/administrator/android-sdk-linux/platform-tools:$PATH
 export USE_CCACHE=1
 
 #go
 export GOPATH=/home/administrator/code/go
-export GOROOT=/usr/lib/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 [ -f ~/.python/funcs.sh ] && source ~/.python/funcs.sh
