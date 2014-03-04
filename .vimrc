@@ -30,6 +30,9 @@ set encoding=utf-8
 "make /g flag default
 set gdefault
 
+"create print command
+command Print execute "!lp %"
+
 "include vundle if here
 if filereadable($HOME."/.vim/vundle")
     source ~/.vim/vundle
