@@ -47,6 +47,7 @@ alias ethstart='sudo ip link set enp12s0 up && sudo dhclient enp12s0'
 alias ethstop='sudo dhclient -r enp12s0 && sudo ip link set enp12s0 down'
 alias ldapdump='python2 -i ~/Dropbox/Network/Useful\ Scripts/ldap/ldapdumpad.py'
 alias ipcheck='python2 ~/Dropbox/Network/Useful\ Scripts/ipcheck.py'
+alias ipscan='python2 ~/Dropbox/Network/Useful\ Scripts/scan.py'
 alias gnome-terminal='TERM=xterm-256color gnome-terminal'
 setopt VI
 
