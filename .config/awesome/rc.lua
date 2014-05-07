@@ -11,6 +11,8 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+require("revelation")
+
 awful.util.spawn_with_shell("~/.config/awesome/startup.py")
 
 -- {{{ Error handling
@@ -228,6 +230,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
+    awful.key({modkey}, "e", revelation),
 
     awful.key({ modkey,           }, "j",
         function ()
