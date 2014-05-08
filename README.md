@@ -5,8 +5,6 @@ This is my repo of useful dot files mainly for vim and zsh for use in programmin
 
 #Initial Setup#
 
-Run `git submodule init` and `git submodule update` to pull in the required submodules.
-
 Run `makelns.sh` to create all the links. It won't overwrite your files, but make sure you read it first to see what it's doing!
 
 #Vim Setup#
