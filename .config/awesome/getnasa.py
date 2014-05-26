@@ -42,7 +42,11 @@ def astro():
     main_url = 'http://apod.nasa.gov/apod/astropix.html'
     printd('Getting: ' + main_url)
     html = requests.get(main_url).text
-    href = re.findall('a href ?= ?"(.*\.(?:jpg|png))"', html, re.IGNORECASE)[0]
+    try:
+        href = re.findall('a href ?= ?"(.*\.(?:jpg|png))"', html, re.IGNORECASE)[0]
+    except IndexError:
+        printd('No pictures today')
+        return
     if 'http' in href:
         img_url = href
     else:
@@ -63,6 +67,9 @@ if 'update' in sys.argv:
             - datetime.datetime.fromtimestamp(os.stat(img_path).st_mtime)\
             > datetime.timedelta(hours=12):
         img_url = astro()
+        if not img_url:
+            printd('No image url. Exiting...')
+            sys.exit(0)
         new_img = urllib.request.urlopen(img_url).read()
         if hashlib.md5(new_img).hexdigest() != oldhash:
             with open(img_path, 'wb') as f:
