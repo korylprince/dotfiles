@@ -1,6 +1,5 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
+ZSH=$HOME/.oh-my-zsh 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -49,6 +48,7 @@ alias ldapdump='python2 -i ~/Dropbox/Network/Useful\ Scripts/ldap/ldapdumpad.py'
 alias ipcheck='python2 ~/Dropbox/Network/Useful\ Scripts/ipcheck.py'
 alias ipscan='python2 ~/Dropbox/Network/Useful\ Scripts/scan.py'
 alias gnome-terminal='TERM=xterm-256color gnome-terminal'
+alias ynab='exo-open /usr/share/applications/YNAB\ 4.desktop'
 setopt VI
 
 # make undo unlimited
