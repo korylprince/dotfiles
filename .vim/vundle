@@ -68,6 +68,9 @@ function! ToggleSyntasticErrors()
     endif
 endfunction
 
+"golang info
+au FileType go nmap <Leader>i <Plug>(go-info)
+
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
