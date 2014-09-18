@@ -3,35 +3,35 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-Bundle 'saltstack/salt-vim'
-Bundle 'ingydotnet/yaml-vim'
-Bundle 'groenewege/vim-less'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'ap/vim-css-color'
-Bundle 'Glench/Vim-Jinja2-Syntax'
-Bundle 'plasticboy/vim-markdown'
-Bundle 'mattn/emmet-vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'ervandew/supertab'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-easytags'
-Bundle 'Blackrush/vim-gocode'
+Plugin 'fatih/vim-go'
+Plugin 'saltstack/salt-vim'
+Plugin 'ingydotnet/yaml-vim'
+Plugin 'groenewege/vim-less'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'ap/vim-css-color'
+Plugin 'Glench/Vim-Jinja2-Syntax'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'mattn/emmet-vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'Valloric/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on
 
 let vim_markdown_folding_disabled=1
-
-"remove autocomplete preview
-let SuperTabClosePreviewOnPopupClose = 1
 
 "syntax check
 let syntastic_enable_signs=1
