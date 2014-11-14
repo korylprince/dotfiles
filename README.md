@@ -17,6 +17,10 @@ Install zsh and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), then hav
 
 Optionally, `mkdir ~/.python` and run `virtualenv2 2` and `virtualenv 3` to enable `venv2` and `venv3` functions.
 
+#mac Setup#
+
+Included is a `mac.sh` script that will do a lot of the setup for you. It is assumed that [brew](http://brew.sh/) is installed, as well as `git`.
+
 #Other Setup#
 
 Theres also files for awesomewm, and `.xinitrc`, so be careful!
