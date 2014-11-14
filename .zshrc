@@ -36,8 +36,6 @@ plugins=(git command-not-found zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 ### my stuff ###
-export EDITOR=vim
-export GIT_EDITOR=vim
 alias vi='vim'
 alias wifistart='sudo systemctl start netctl-auto@wlp3s0.service'
 alias wifirestart='sudo systemctl restart netctl-auto@wlp3s0.service'
@@ -67,6 +65,13 @@ export USE_CCACHE=1
 #go
 export GOPATH=$HOME/code/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
+
+#homebrew
+export PATH=/usr/local/bin:$PATH
+
+#editor stuff
+export EDITOR=vim
+export GIT_EDITOR=vim
 
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 [ -f ~/.python/funcs.sh ] && source ~/.python/funcs.sh
