@@ -12,6 +12,8 @@ brew install ctags
 brew install vim --with-lua
 brew install hg
 
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 /usr/local/bin/vim +BundleInstall +qall
 /usr/local/bin/vim +GoInstallBinaries +qall
 
