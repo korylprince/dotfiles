@@ -17,6 +17,7 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 /usr/local/bin/vim +BundleInstall +qall
 /usr/local/bin/vim +GoInstallBinaries +qall
 
-defaults write com.apple.Terminal "Startup Window Settings" Basic
+defaults write com.apple.Terminal "Startup Window Settings" Pro
+defaults write com.apple.Terminal "Default Window Settings" Pro
 
 chsh -s /bin/zsh
