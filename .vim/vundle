@@ -43,7 +43,7 @@ let syntastic_auto_loc_list = 1
 
 "don't syntax check by default
 let syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': [],
+            \ 'active_filetypes': ['go'],
             \ 'passive_filetypes': [] }
 
 "don't freak about about angular attrs
@@ -57,16 +57,6 @@ au VimEnter * RainbowParenthesesToggle
 "easytags
 set tags+=~/.vimtags
 
-function! ToggleSyntasticErrors()
-    let old_last_winnr = winnr('$')
-    SyntasticReset
-    SyntasticToggleMode
-    if old_last_winnr == winnr('$')
-        " Nothing was closed, open syntastic error location panel
-        SyntasticCheck
-        SyntasticToggleMode
-    endif
-endfunction
 
 "golang info
 au FileType go nmap <Leader>i <Plug>(go-info)
@@ -78,7 +68,8 @@ let g:neocomplete#enable_at_startup = 1
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
 nnoremap <F4> :RainbowParenthesesToggleAll<cr>
-nnoremap <F5> :call ToggleSyntasticErrors()<cr>
+nnoremap <F5> :w<CR> :SyntasticCheck<cr>
+nnoremap <F6> :SyntasticReset<cr>
 autocmd BufNewFile,BufRead *.go nnoremap <F12> :!go run %<cr>
 
 filetype plugin indent on
