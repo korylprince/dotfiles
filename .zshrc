@@ -59,7 +59,7 @@ bindkey '^R' history-incremental-search-backward
 setopt RM_STAR_WAIT
 
 #android + PATHs
-export PATH=$HOME/android-sdk-linux/tools:$HOME/android-sdk-linux/platform-tools:$PATH
+export PATH=$HOME/Android/Sdk/tools:$HOME/Android/Sdk/platform-tools:$PATH
 export USE_CCACHE=1
 
 #go
