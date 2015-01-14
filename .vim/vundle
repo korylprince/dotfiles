@@ -64,6 +64,9 @@ set tags+=~/.vimtags
 "golang info
 au FileType go nmap <Leader>i <Plug>(go-info)
 
+"goimports on save
+let g:go_fmt_command = "goimports"
+
 "enable neocomplete
 let g:neocomplete#enable_at_startup = 1
 
