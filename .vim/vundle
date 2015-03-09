@@ -76,6 +76,6 @@ nnoremap <F3> :TagbarToggle<cr>
 nnoremap <F4> :RainbowParenthesesToggleAll<cr>
 nnoremap <F5> :w<CR> :SyntasticCheck<cr>
 nnoremap <F6> :SyntasticReset<cr>
-autocmd BufNewFile,BufRead *.go nnoremap <F12> :!go run %<cr>
+autocmd BufNewFile,BufRead *.go nnoremap <F12> :GoRun<cr>
 
 filetype plugin indent on
