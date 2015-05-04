@@ -77,6 +77,6 @@ nnoremap <F4> :RainbowParenthesesToggleAll<cr>
 nnoremap <F5> :w<CR> :SyntasticCheck<cr>
 nnoremap <F6> :SyntasticReset<cr>
 autocmd BufNewFile,BufRead *.go nnoremap <F12> :GoRun<cr>
-autocmd BufNewFile,BufRead *.py nnoremap <F12> :!python -i %<cr>
+autocmd BufNewFile,BufRead *.py nnoremap <F12> :!bpython -i %<cr>
 
 filetype plugin indent on
