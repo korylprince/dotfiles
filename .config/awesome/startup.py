@@ -5,7 +5,7 @@ every = ['synclient HorizTwoFingerScroll=1'
          ' TapButton2=2',
          'python /home/administrator/.config/awesome/getnasa.py',
          'xmodmap -e "keycode  6 = Shift_L"']
-once = [('dropboxd', 'dropbox'), 'xcompmgr', 'batterymon', 'thunderbird']
+once = [('dropboxd', 'dropbox'), 'xcompmgr', 'batterymon']
 
 for c in every:
     os.system(c)
