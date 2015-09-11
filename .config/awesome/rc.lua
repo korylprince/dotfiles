@@ -105,7 +105,7 @@ mypowermenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "Power", mypowermenu },
-                                    { "Chrome", "chromium" },
+                                    { "Chrome", "google-chrome-stable" },
                                     { "terminal", "gnome-terminal" }
                                   }
                         })
