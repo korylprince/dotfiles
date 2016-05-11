@@ -18,7 +18,6 @@ Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -30,9 +29,6 @@ Plugin 'Shougo/neocomplete.vim'
 
 call vundle#end()
 filetype plugin indent on
-
-"don't autoselect completion
-let g:jedi#popup_on_dot = 0
 
 let vim_markdown_folding_disabled=1
 
@@ -68,7 +64,7 @@ au FileType go nmap <Leader>i <Plug>(go-info)
 let g:go_fmt_command = "goimports"
 
 "enable neocomplete
-let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#enable_at_startup = 1
 
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
