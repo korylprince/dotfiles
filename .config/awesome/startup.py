@@ -1,8 +1,7 @@
 #!/usr/bin/python
 import os
 
-every = ['synclient HorizTwoFingerScroll=1'
-         ' TapButton2=2',
+every = ['synclient HorizTwoFingerScroll=1 TapButton2=2 VertScrollDelta=-99 HorizScrollDelta=-99',
          'python /home/administrator/.config/awesome/getnasa.py',
          'xmodmap -e "keycode  6 = Shift_L"']
 once = [('dropboxd', 'dropbox'), 'xcompmgr', 'batterymon']
