@@ -26,6 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/echodoc.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -45,9 +46,12 @@ let syntastic_mode_map = { 'mode': 'passive',
             \ 'active_filetypes': ['go'],
             \ 'passive_filetypes': [] }
 
+"go check syntax, etc
+let g:syntastic_go_checkers = ['gotype', 'golint', 'govet', 'errcheck']
+let g:go_list_type = "quickfix"
+
 "don't freak about about angular attrs
 let syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
 
 "fix the rainbows
 source ~/.vim/colors
@@ -56,15 +60,19 @@ au VimEnter * RainbowParenthesesToggle
 "easytags
 set tags+=~/.vimtags
 
-
 "golang info
+let g:go_auto_type_info = 1
 au FileType go nmap <Leader>i <Plug>(go-info)
 
 "goimports on save
 let g:go_fmt_command = "goimports"
 
 "enable neocomplete
-"let g:neocomplete#enable_at_startup = 1
+set cmdheight=2
+set completeopt+=menuone
+set completeopt-=preview
+let g:neocomplete#enable_at_startup = 1
+let g:echodoc_enable_at_startup = 1
 
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
