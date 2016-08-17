@@ -27,6 +27,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/echodoc.vim'
+Plugin 'sirtaj/vim-openscad'
 
 call vundle#end()
 filetype plugin indent on
@@ -47,7 +48,7 @@ let syntastic_mode_map = { 'mode': 'passive',
             \ 'passive_filetypes': [] }
 
 "go check syntax, etc
-let g:syntastic_go_checkers = ['gotype', 'golint', 'govet', 'errcheck']
+let g:syntastic_go_checkers = ['gotype', 'govet', 'golint', 'errcheck']
 let g:go_list_type = "quickfix"
 
 "don't freak about about angular attrs
