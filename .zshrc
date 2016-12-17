@@ -73,5 +73,8 @@ export PATH=/usr/local/bin:$PATH
 export EDITOR=vim
 export GIT_EDITOR=vim
 
+#use vim for man
+export MANPAGER="/usr/bin/vimpager"
+
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 [ -f ~/.python/funcs.sh ] && source ~/.python/funcs.sh
