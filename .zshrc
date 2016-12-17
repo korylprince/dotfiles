@@ -37,11 +37,11 @@ source $ZSH/oh-my-zsh.sh
 
 ### my stuff ###
 alias vi='vim'
-alias wifistart='sudo systemctl start netctl-auto@wlp3s0.service'
-alias wifirestart='sudo systemctl restart netctl-auto@wlp3s0.service'
-alias wifistop='sudo systemctl stop netctl-auto@wlp3s0.service'
-alias ethstart='sudo ip link set enp0s25 up && sudo dhclient enp0s25'
-alias ethstop='sudo dhclient -r enp0s25 && sudo ip link set enp0s25 down'
+alias wifistart='sudo systemctl start netctl-auto@wlp1s0.service'
+alias wifirestart='sudo systemctl restart netctl-auto@wlp1s0.service'
+alias wifistop='sudo systemctl stop netctl-auto@wlp1s0.service'
+alias ethstart='sudo ip link set enp0s31f6 up && sudo dhclient enp0s31f6'
+alias ethstop='sudo dhclient -r enp0s31f6 && sudo ip link set enp0s31f6 down'
 alias ldapdump='python2 -i ~/Dropbox/Network/Useful\ Scripts/ldap/ldapdumpad.py'
 alias ipcheck='python2 ~/Dropbox/Network/Useful\ Scripts/ipcheck.py'
 alias ipscan='python2 ~/Dropbox/Network/Useful\ Scripts/scan.py'
