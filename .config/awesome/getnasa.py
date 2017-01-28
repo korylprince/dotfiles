@@ -79,4 +79,4 @@ if 'update' in sys.argv:
     else:
         printd('Image too new')
 
-    setbg()
+setbg()
