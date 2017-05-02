@@ -29,6 +29,7 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/echodoc.vim'
 Plugin 'posva/vim-vue'
 Plugin 'sirtaj/vim-openscad'
+Plugin 'wavded/vim-stylus'
 
 call vundle#end()
 filetype plugin indent on
