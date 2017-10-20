@@ -15,6 +15,7 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
+/home/administrator/.screenlayout/main.sh &
 /usr/bin/xscreensaver -no-splash &
 nitrogen --restore &
 exec gnome-session --session=awesome
