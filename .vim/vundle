@@ -8,14 +8,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'sheerun/vim-polyglot'
 Plugin 'fatih/vim-go'
-Plugin 'saltstack/salt-vim'
-Plugin 'ingydotnet/yaml-vim'
-Plugin 'groenewege/vim-less'
-Plugin 'hail2u/vim-css3-syntax'
 Plugin 'ap/vim-css-color'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'marijnh/tern_for_vim'
@@ -23,13 +18,14 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/echodoc.vim'
-Plugin 'posva/vim-vue'
-Plugin 'sirtaj/vim-openscad'
-Plugin 'wavded/vim-stylus'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 filetype plugin indent on
@@ -79,6 +75,9 @@ let g:echodoc_enable_at_startup = 1
 
 "fix syntax hilighting on vue files
 autocmd BufEnter *.vue :syntax sync fromstart
+
+"add special symbols
+let g:airline_powerline_fonts = 1
 
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>

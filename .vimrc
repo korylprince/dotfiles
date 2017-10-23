@@ -1,4 +1,9 @@
+set nocompatible
+
 syntax on
+set nocursorcolumn
+set nocursorline
+set norelativenumber
 
 set autoindent
 set smartindent
@@ -21,9 +26,6 @@ set backspace=indent,eol,start
 "wrap lines
 set textwidth=0
 set wrap
-
-"line
-set cursorline
 
 set encoding=utf-8
 
