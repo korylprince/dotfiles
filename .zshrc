@@ -52,8 +52,6 @@ setopt VI
 # make undo unlimited
 bindkey -M vicmd 'u' undo
 bindkey -M vicmd '^r' redo
-# fix history search
-bindkey '^R' history-incremental-search-backward
 
 # 10 second wait if you do something that will delete everything.
 setopt RM_STAR_WAIT
@@ -78,3 +76,11 @@ export MANPAGER="/usr/bin/vimpager"
 
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 [ -f ~/.python/funcs.sh ] && source ~/.python/funcs.sh
+
+#use fzf
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
+
+#use ripgrep
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob \!.git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"

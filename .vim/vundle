@@ -25,10 +25,10 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/echodoc.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
-filetype plugin indent on
 
 let vim_markdown_folding_disabled=1
 
