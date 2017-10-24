@@ -53,6 +53,7 @@ let g:echodoc_enable_at_startup = 1
 "fix syntax hilighting on vue files
 autocmd BufEnter *.vue :syntax sync fromstart
 
+<<<<<<< HEAD
 "add special symbols
 let g:airline_powerline_fonts = 1
 
@@ -77,6 +78,9 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"yaml indentation
+au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
