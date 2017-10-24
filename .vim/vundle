@@ -12,7 +12,6 @@ Plugin 'sheerun/vim-polyglot'
 Plugin 'fatih/vim-go'
 Plugin 'ap/vim-css-color'
 Plugin 'mattn/emmet-vim'
-Plugin 'scrooloose/syntastic'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
@@ -27,46 +26,24 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'w0rp/ale'
+Plugin 'tpope/vim-commentary'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
-
-let vim_markdown_folding_disabled=1
-
-"syntax check
-let syntastic_enable_signs=1
-set statusline=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let syntastic_always_populate_loc_list = 1
-let syntastic_auto_loc_list = 1
-
-"don't syntax check by default
-let syntastic_mode_map = { 'mode': 'passive',
-            \ 'active_filetypes': ['go'],
-            \ 'passive_filetypes': [] }
-
-"go check syntax, etc
-let g:syntastic_go_checkers = ['gotype', 'govet', 'golint', 'errcheck']
-let g:go_list_type = "quickfix"
-
-"don't freak about about angular attrs
-let syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
-"fix the rainbows
-source ~/.vim/colors
-au VimEnter * RainbowParenthesesToggle
 
 "easytags
 set tags+=~/.vimtags
 
 "golang info
-let g:go_auto_type_info = 1
 au FileType go nmap <Leader>i <Plug>(go-info)
 
 "goimports on save
 let g:go_fmt_command = "goimports"
 
 "enable neocomplete
+set noshowmode
 set cmdheight=2
 set completeopt+=menuone
 set completeopt-=preview
@@ -79,12 +56,33 @@ autocmd BufEnter *.vue :syntax sync fromstart
 "add special symbols
 let g:airline_powerline_fonts = 1
 
+"ale completion
+let g:ale_completion_enabled = 1
+
+"integrate ale and airline
+let g:airline#extensions#ale#enabled = 1
+
+"integrate ale and gometalinter
+let g:ale_linters = {'go': ['gometalinter']}
+let g:ale_go_gometalinter_options = "--fast --disable=gocyclo"
+
+"solarized theme
+syntax on
+let g:solarized_termtrans = 1
+set background=dark
+colorscheme solarized
+
+"rainbows
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
 nnoremap <F4> :RainbowParenthesesToggleAll<cr>
-nnoremap <F5> :w<CR> :SyntasticCheck<cr>
-nnoremap <F6> :SyntasticReset<cr>
+nnoremap <F5> :IndentGuidesToggle<cr>
 autocmd BufNewFile,BufRead *.go nnoremap <F12> :GoRun<cr>
 autocmd BufNewFile,BufRead *.py nnoremap <F12> :!bpython -i %<cr>
 

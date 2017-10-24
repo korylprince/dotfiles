@@ -15,6 +15,7 @@ fi
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
+[ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
 /home/administrator/.screenlayout/main.sh &
 /usr/bin/xscreensaver -no-splash &
 nitrogen --restore &

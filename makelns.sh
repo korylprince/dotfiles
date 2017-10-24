@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-file_list=( ".zprofile" ".zshrc" ".vimrc" ".vim" ".tmux.conf" ".xinitrc" ".config/awesome" ".config/nitrogen" ".python/funcs.sh" )
+file_list=( ".zprofile" ".zshrc" ".vimrc" ".vim" ".tmux.conf" ".xinitrc" ".config/awesome" ".config/nitrogen" ".python/funcs.sh" ".Xresources" ".dir_colors/dircolors" )
 
 SUCCESS=true
 

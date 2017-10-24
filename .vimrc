@@ -1,6 +1,5 @@
 set nocompatible
 
-syntax on
 set nocursorcolumn
 set nocursorline
 set norelativenumber

@@ -35,6 +35,8 @@ plugins=(git command-not-found zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
+eval `dircolors /home/administrator/.dir_colors/dircolors`
+
 ### my stuff ###
 alias vi='vim'
 alias wifistart='sudo systemctl start netctl-auto@wlp1s0.service'
