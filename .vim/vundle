@@ -80,6 +80,9 @@ let g:echodoc_enable_at_startup = 1
 "fix syntax hilighting on vue files
 autocmd BufEnter *.vue :syntax sync fromstart
 
+" yaml indentation
+au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
