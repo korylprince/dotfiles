@@ -53,7 +53,6 @@ let g:echodoc_enable_at_startup = 1
 "fix syntax hilighting on vue files
 autocmd BufEnter *.vue :syntax sync fromstart
 
-<<<<<<< HEAD
 "add special symbols
 let g:airline_powerline_fonts = 1
 
