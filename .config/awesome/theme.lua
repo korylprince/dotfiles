@@ -14,46 +14,44 @@ local theme = {}
 theme.font          = "Source Code Pro 10"
 
 theme.colors = {}
-theme.colors.base03  = "#002b36ff"
-theme.colors.base02  = "#073642ff"
-theme.colors.base01  = "#586e75ff"
-theme.colors.base00  = "#657b83ff"
-theme.colors.base0   = "#839496ff"
-theme.colors.base1   = "#93a1a1ff"
-theme.colors.base2   = "#eee8d5ff"
-theme.colors.base3   = "#fdf6e3ff"
-theme.colors.yellow  = "#b58900ff"
-theme.colors.orange  = "#cb4b16ff"
-theme.colors.red     = "#dc322fff"
-theme.colors.magenta = "#d33682ff"
-theme.colors.violet  = "#6c71c4ff"
-theme.colors.blue    = "#268bd2ff"
-theme.colors.cyan    = "#2aa198ff"
-theme.colors.green   = "#859900ff"
+theme.colors.base03  = "#002b36"
+theme.colors.base02  = "#073642"
+theme.colors.base01  = "#586e75"
+theme.colors.base00  = "#657b83"
+theme.colors.base0   = "#839496"
+theme.colors.base1   = "#93a1a1"
+theme.colors.base2   = "#eee8d5"
+theme.colors.base3   = "#fdf6e3"
+theme.colors.yellow  = "#b58900"
+theme.colors.orange  = "#cb4b16"
+theme.colors.red     = "#dc322f"
+theme.colors.magenta = "#d33682"
+theme.colors.violet  = "#6c71c4"
+theme.colors.blue    = "#268bd2"
+theme.colors.cyan    = "#2aa198"
+theme.colors.green   = "#859900"
 
-theme.fg_normal     = theme.colors.base2
-theme.bg_normal     = theme.colors.base03
-theme.border_normal = theme.colors.base02
+theme.fg_normal          = theme.colors.base1
+theme.bg_normal          = theme.colors.base03
+theme.border_normal      = theme.colors.base02
+theme.tasklist_bg_normal = theme.colors.base02
+theme.bg_systray         = theme.bg_normal
 
-theme.fg_focus      = theme.colors.base03
-theme.bg_focus      = theme.colors.base01
-theme.border_focus  = theme.fg_focus
+theme.fg_focus           = theme.colors.base02
+theme.bg_focus           = theme.colors.green
+theme.border_focus       = theme.border_normal
+theme.taglist_fg_focus   = theme.colors.base02
+theme.tasklist_fg_focus  = theme.colors.green
+theme.tasklist_bg_focus  = theme.colors.base02
 
-theme.fg_urgent     = theme.colors.base02
-theme.bg_urgent     = theme.colors.red
-theme.border_urgent = theme.bg_urgent.red
-
-theme.bg_systray    = theme.bg_normal
+theme.fg_urgent          = theme.colors.base02
+theme.bg_urgent          = theme.colors.red
+theme.border_urgent      = theme.bg_urgent.red
 
 theme.border_marked = theme.bg_urgent
 
-theme.titlebar_bg_normal = theme.bg_normal
-theme.titlebar_bg_focus  = theme.bg_focus
-theme.titlebar_bg_urget  = theme.bg_urgent
-
 theme.useless_gap   = dpi(0)
 theme.border_width  = dpi(2)
-
 
 -- There are other variable sets
 -- overriding the default one when
