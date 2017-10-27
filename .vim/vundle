@@ -44,7 +44,7 @@ let g:go_fmt_command = "goimports"
 
 "enable neocomplete
 set noshowmode
-set cmdheight=2
+set cmdheight=1
 set completeopt+=menuone
 set completeopt-=preview
 let g:neocomplete#enable_at_startup = 1
