@@ -64,7 +64,7 @@ let g:airline#extensions#ale#enabled = 1
 
 "integrate ale and gometalinter
 let g:ale_linters = {'go': ['gometalinter']}
-let g:ale_go_gometalinter_options = "--disable-all -Edupl -Eerrcheck -Egas -Egoconst -Egofmt -Egoimports -Egolint -Egotype -Egotypex -Eineffassign -Emisspell -Evet -Evetshadow"
+let g:ale_go_gometalinter_options = "--disable-all -Eerrcheck -Egas -Egoconst -Egofmt -Egoimports -Egolint -Egotype -Egotypex -Eineffassign -Emisspell -Evet -Evetshadow"
 
 "solarized theme
 syntax on
