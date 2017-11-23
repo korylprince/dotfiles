@@ -56,6 +56,9 @@ autocmd BufEnter *.vue :syntax sync fromstart
 "add special symbols
 let g:airline_powerline_fonts = 1
 
+"ale html options
+let g:ale_html_tidy_options = "--custom-tags yes"
+
 "ale completion
 let g:ale_completion_enabled = 1
 
