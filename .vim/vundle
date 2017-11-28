@@ -15,7 +15,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'majutsushi/tagbar'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'bounceme/poppy.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'xolox/vim-misc'
@@ -76,10 +76,7 @@ set background=dark
 colorscheme solarized
 
 "rainbows
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au! cursormoved * call PoppyInit()
 
 "yaml indentation
 au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
@@ -87,7 +84,6 @@ au FileType yaml setlocal tabstop=2 expandtab shiftwidth=2 softtabstop=2
 "function mappings
 nnoremap <F2> :NERDTreeToggle<cr>
 nnoremap <F3> :TagbarToggle<cr>
-nnoremap <F4> :RainbowParenthesesToggleAll<cr>
 nnoremap <F5> :IndentGuidesToggle<cr>
 autocmd BufNewFile,BufRead *.go nnoremap <F12> :GoRun<cr>
 autocmd BufNewFile,BufRead *.py nnoremap <F12> :!bpython -i %<cr>
