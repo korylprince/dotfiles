@@ -31,7 +31,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git command-not-found zsh-syntax-highlighting)
+plugins=(git command-not-found zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,3 +86,6 @@ export MANPAGER="/usr/bin/vimpager"
 #use ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob \!.git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+#set color for autocomplete
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
