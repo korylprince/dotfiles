@@ -87,5 +87,6 @@ nnoremap <F3> :TagbarToggle<cr>
 nnoremap <F5> :IndentGuidesToggle<cr>
 autocmd BufNewFile,BufRead *.go nnoremap <F12> :GoRun<cr>
 autocmd BufNewFile,BufRead *.py nnoremap <F12> :!bpython -i %<cr>
+autocmd BufNewFile,BufRead *.sh nnoremap <F12> :!sh %<cr>
 
 filetype plugin indent on
