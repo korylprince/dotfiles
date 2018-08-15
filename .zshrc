@@ -70,7 +70,7 @@ export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 #node_modules/.bin
-export PATH=$PWD/node_modules/.bin:$PATH
+export PATH=./node_modules/.bin:$PATH
 
 #editor stuff
 export EDITOR=vim
