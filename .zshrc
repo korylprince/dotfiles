@@ -94,4 +94,5 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 #use nvm
-source /usr/share/nvm/init-nvm.sh
+[ -s "/usr/share/nvm/init-nvm.sh" ] && \. "/usr/share/nvm/init-nvm.sh"
+[ -s "$HOME/.nvm/nvm.sh" ] && \. "$HOME/.nvm/nvm.sh"
