@@ -20,9 +20,12 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'Shougo/deoplete.nvim'
+Plugin 'zchee/deoplete-go', { 'do': 'make'}
+Plugin 'ervandew/supertab'
 Plugin 'Shougo/echodoc.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
@@ -40,12 +43,26 @@ set tags+=~/.vimtags
 
 "enable deoplete
 let g:deoplete#enable_at_startup = 1
+set completeopt-=preview
+
+"make enter select completion
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+"supertab normal order
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "golang info
-au FileType go nmap <Leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
 
 "goimports on save
 let g:go_fmt_command = "goimports"
+
+"turn on better syntax hilighting
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_operators = 1
 
 "fix syntax hilighting on vue files
 autocmd BufEnter *.vue :syntax sync fromstart
