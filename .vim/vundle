@@ -78,6 +78,10 @@ let g:ale_lint_on_text_changed = 0
 "ale html options
 let g:ale_html_tidy_options = "--custom-tags yes"
 
+"javascript fix on save
+let g:ale_fixers = { 'javascript': ['eslint'], 'vue': ['eslint'] }
+let g:ale_fix_on_save = 1
+
 "ale completion
 let g:ale_completion_enabled = 1
 
