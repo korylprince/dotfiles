@@ -92,6 +92,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {'go': ['gometalinter']}
 let g:ale_go_gometalinter_options = "--disable-all -Eerrcheck -Egoconst -Egofmt -Egoimports -Egolint -Egotype -Egotypex -Eineffassign -Emisspell -Evet -Evetshadow"
 
+"ale python options
+let g:ale_python_flake8_options = '--ignore=E501'
+
 "solarized theme
 syntax on
 let g:solarized_termtrans = 1
