@@ -19,7 +19,7 @@ Plugin 'bounceme/poppy.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
+Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
@@ -37,9 +37,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
-
-"easytags
-set tags+=~/.vimtags
 
 "enable deoplete
 let g:deoplete#enable_at_startup = 1
