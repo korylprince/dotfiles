@@ -8,7 +8,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'sheerun/vim-polyglot'
 Plugin 'fatih/vim-go'
 Plugin 'ap/vim-css-color'
 Plugin 'mattn/emmet-vim'
@@ -20,7 +19,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'xolox/vim-misc'
 Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 Plugin 'roxma/nvim-yarp'
 Plugin 'roxma/vim-hug-neovim-rpc'
 Plugin 'Shougo/deoplete.nvim'
@@ -35,6 +33,7 @@ Plugin 'w0rp/ale'
 Plugin 'tpope/vim-commentary'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'sheerun/vim-polyglot'
 
 call vundle#end()
 
