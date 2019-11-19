@@ -85,8 +85,9 @@ let g:ale_completion_enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 "integrate ale and gometalinter
-let g:ale_linters = {'go': ['gometalinter']}
-let g:ale_go_gometalinter_options = "--disable-all -Eerrcheck -Egoconst -Egofmt -Egoimports -Egolint -Egotype -Egotypex -Eineffassign -Emisspell -Evet -Evetshadow"
+let g:ale_linters = {'go': ['gobuild', 'golangci-lint']}
+let g:ale_go_golangci_lint_options = "--enable-all -Dlll -Dwsl -Dstylecheck -Dgochecknoglobals -Dfunlen -Dgocyclo -Dgomnd"
+let g:ale_go_golangci_lint_package = 1
 
 "ale python options
 let g:ale_python_flake8_options = '--ignore=E501'
