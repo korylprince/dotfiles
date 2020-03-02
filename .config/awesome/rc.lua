@@ -242,8 +242,8 @@ root.buttons(awful.util.table.join(
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     awful.key({ 'Control','Shift'}, "l", function()  awful.util.spawn('xscreensaver-command --lock') end),
-    awful.key({ }, "Print", function()  awful.util.spawn('xfce4-screenshooter -f -c') end),
-    awful.key({ 'Shift' }, "Print", function()  awful.util.spawn('xfce4-screenshooter -r -c') end),
+    awful.key({ }, "Print", function()  awful.util.spawn('screenshot-full') end),
+    awful.key({ 'Shift' }, "Print", function()  awful.util.spawn('screenshot-selection') end),
     awful.key({ }, "XF86AudioRaiseVolume", function()  awful.util.spawn('amixer sset Master 5%+') end),
     awful.key({ }, "XF86AudioLowerVolume", function()  awful.util.spawn('amixer sset Master 5%-') end),
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
