@@ -38,6 +38,7 @@ source $ZSH/oh-my-zsh.sh
 eval `dircolors /home/administrator/.dir_colors/dircolors`
 
 ### my stuff ###
+alias vim='nvim'
 alias vi='vim'
 alias wifistart='sudo systemctl start netctl-auto@wlp1s0.service'
 alias wifirestart='sudo systemctl restart netctl-auto@wlp1s0.service'
@@ -73,11 +74,13 @@ export PATH=/usr/local/bin:$PATH
 export PATH=./node_modules/.bin:$PATH
 
 #editor stuff
-export EDITOR=vim
-export GIT_EDITOR=vim
+export EDITOR=nvim
+export GIT_EDITOR=nvim
 
-#use vim for man
-export MANPAGER="/usr/bin/vimpager"
+#use nvim for pagers
+export PAGER="nvimpager"
+export MANPAGER="nvimpager"
+export GIT_PAGER="nvimpager"
 
 [ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 [ -f ~/.python/funcs.sh ] && source ~/.python/funcs.sh
