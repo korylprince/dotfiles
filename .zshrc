@@ -47,10 +47,10 @@ alias ethstart='sudo ip link set enp0s31f6 up && sudo dhclient enp0s31f6'
 alias ethstop='sudo dhclient -r enp0s31f6 && sudo ip link set enp0s31f6 down && sudo resolvconf -u'
 alias ldapdump='~/Dropbox/Network/Useful\ Scripts/ldap/ldapdumpad.py'
 alias ipcheck='python2 ~/Dropbox/Network/Useful\ Scripts/ipcheck.py'
-alias ipscan='python2 ~/Dropbox/Network/Useful\ Scripts/scan.py'
 alias gnome-terminal='TERM=xterm-256color gnome-terminal'
 alias ynab='exo-open /usr/share/applications/YNAB\ 4.desktop'
 setopt VI
+setopt share_history
 
 # make undo unlimited
 bindkey -M vicmd 'u' undo
