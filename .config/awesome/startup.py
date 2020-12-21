@@ -6,7 +6,7 @@ every = [
     'python /home/administrator/.config/awesome/getnasa.py',
     'xmodmap -e "keycode  6 = Shift_L"',
 ]
-once = [('dropboxd', 'dropbox'), 'xcompmgr', 'batterymon']
+once = [('dropboxd', 'dropbox'), 'xcompmgr', 'batterymon', 'xbindkeys']
 
 for c in every:
     os.system(c)
