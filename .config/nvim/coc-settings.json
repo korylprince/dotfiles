@@ -1,0 +1,4 @@
+{
+    "vetur.ignoreProjectWarning": true,
+    "eslint.autoFixOnSave": true
+}
