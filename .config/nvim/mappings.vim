@@ -13,6 +13,12 @@ let g:go_doc_keywordprg_enabled = 0
 " Go: disable vim-go code completion
 let g:go_code_completion_enabled = 0
 
+" Go: format code on write with coc-go
+let g:go_fmt_autosave = 0
+autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
+      \ | :call CocAction('format')
+      
+
 " LanguageServer: Use tab for completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

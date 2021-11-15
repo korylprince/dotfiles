@@ -52,9 +52,6 @@ let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 
-" Go: goimports on save
-let g:go_fmt_command = "goimports"
-
 " Airline: enable airline special symbols
 let g:airline_powerline_fonts = 1
 
