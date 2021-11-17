@@ -18,7 +18,6 @@ let g:go_fmt_autosave = 0
 autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
       \ | :call CocAction('format')
       
-
 " LanguageServer: Use tab for completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -32,11 +31,8 @@ function! s:check_back_space() abort
 endfunction
 
 " LanguageServer: Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " LanguageServer: Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
