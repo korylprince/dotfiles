@@ -18,20 +18,20 @@ let g:go_fmt_autosave = 0
 autocmd BufWritePre *.go silent! :call CocAction('runCommand', 'editor.action.organizeImport')
       \ | :call CocAction('format')
       
-" LanguageServer: Use tab for completion
+" LanguageServer: tab autocomplete
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-function! s:check_back_space() abort
+function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" LanguageServer: Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+" LanguageServer: complete on enter
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " LanguageServer: Use K to show documentation in preview window

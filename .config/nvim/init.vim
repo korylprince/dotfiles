@@ -20,6 +20,9 @@ set expandtab
 " Default: automatically insert on terminal
 autocmd TermOpen term://* startinsert
 
+" Default: always show sign column
+set signcolumn=yes
+
 
 " Plugins
 call plug#begin()
@@ -55,9 +58,6 @@ let g:go_highlight_variable_declarations = 1
 " Airline: enable airline special symbols
 let g:airline_powerline_fonts = 1
 
-" LanguageServer: TextEdit might fail if hidden is not set.
-set hidden
-
 " LanguageServer: Some language servers have issues with backup files
 set nobackup
 set nowritebackup
@@ -67,9 +67,6 @@ set cmdheight=2
 
 " LanguageServer: Having longer updatetime leads to noticeable delays and poor user experience.
 set updatetime=300
-
-" LanguageServer: Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
 
 " LanguageServer: Highlight the current symbol and its references
 autocmd CursorHold * silent call CocActionAsync('highlight')
