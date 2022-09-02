@@ -2,9 +2,9 @@
 command Print execute "!lp %"
 
 " run program
-autocmd FileType go nnoremap <buffer> <F12> :terminal go run .<CR>
-autocmd FileType python nnoremap <buffer> <F12> :terminal bpython -i %<CR>
-autocmd FileType sh nnoremap <buffer> <F12> :terminal sh %<CR>
+autocmd FileType go nnoremap <buffer> <F12> :tab terminal go run .<CR>
+autocmd FileType python nnoremap <buffer> <F12> :tab terminal bpython -i %<CR>
+autocmd FileType sh nnoremap <buffer> <F12> :tab terminal sh %<CR>
 
 " Go: disable vim-go :GoDef short cut (gd)
 let g:go_def_mapping_enabled = 0

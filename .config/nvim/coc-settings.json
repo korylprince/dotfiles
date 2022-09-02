@@ -1,14 +1,7 @@
 {
     "vetur.ignoreProjectWarning": true,
     "eslint.autoFixOnSave": true,
-    "languageserver": {
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"],
-            "initializationOptions": {
-                "usePlaceholders": true
-            }
-        }
-    }
+    "go.goplsPath": "/home/administrator/code/go/bin/gopls",
+    "go.goplsArgs": ["-remote=auto"],
+    "go.usePlaceholders": true
 }
