@@ -23,6 +23,8 @@ autocmd TermOpen term://* startinsert
 " Default: always show sign column
 set signcolumn=yes
 
+" Default: disable mouse
+set mouse=
 
 " Plugins
 call plug#begin()
