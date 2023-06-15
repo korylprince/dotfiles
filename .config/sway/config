@@ -1,0 +1,145 @@
+### Theme
+default_border pixel 1
+font pango:Cantarell Regular 11
+output * bg ~/.config/sway/wallpaper.png fill
+
+client.focused #073642 #073642 #859900 #859900 #657b83
+client.unfocused #073642 #002b36 #93a1a1 #859900 #586e75
+client.focused_inactive #073642 #002b36 #93a1a1 #859900 #586e75
+client.urgent #073642 #073642 #dc322f #859900 #657b83
+
+### Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term gnome-terminal
+set $menu $HOME/.config/fuzzel/fuzzel_run | xargs swaymsg exec --
+
+### Inputs
+# disable capslock
+input type:keyboard {
+    xkb_options caps:none
+}
+
+# configure touchpad
+input type:touchpad {
+    dwt enabled
+    tap disabled
+    natural_scroll enabled
+    click_method clickfinger
+    middle_emulation enabled
+}
+
+### Lockscreen
+exec swayidle -w \
+    timeout 600 'swaylock -f' \
+    timeout 660 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    before-sleep 'swaylock -f'
+
+bindsym Ctrl+Shift+l exec swaylock -f
+
+### Keybinds
+# Terminal
+bindsym $mod+Return exec $term
+
+# Open menu
+bindsym $mod+r exec $menu
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+# Function Keys
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym Print exec /usr/share/sway/scripts/grimshot copy screen
+bindsym Shift+Print exec /usr/share/sway/scripts/grimshot copy area
+
+## Workspaces
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+## Container manipulation
+# Mouse manipulation
+floating_modifier $mod normal
+focus_follows_mouse always
+mouse_warping container
+
+# Close focused window
+bindsym $mod+Shift+c kill
+
+# Move container focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move focused container
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle focused container floating mode
+bindsym $mod+m floating toggle
+
+# Split modes
+bindsym $mod+s splith
+bindsym $mod+Shift+s splitv
+
+# Toggle through layout modes
+bindsym $mod+space layout toggle tabbed splith splitv
+bindsym $mod+Shift+space layout toggle tabbed splitv splith
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+## Default floating apps
+for_window [app_id="nm-connection-editor"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+
+### Waybar
+bar {
+    swaybar_command waybar
+}
+
+exec_always nm-applet --indicator
+
+# Notifications
+exec mako
+exec_always makoctl reload
+
+### Includes
+include /etc/sway/config.d/*

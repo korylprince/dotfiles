@@ -1,26 +1,53 @@
-dotfiles
-<https://github.com/korylprince/dotfiles>
+# korylprince's dotfiles
 
-This is my repo of useful dot files mainly for vim and zsh for use in programming. Note: I'm running Arch so python3 is the default python.
+These are the configuration files I use for my Arch Linux installations.
 
-# Initial Setup
+[packages.txt](https://github.com/korylprince/dotfiles/blob/master/packages.txt) contains all of the Arch packages required.
 
-Run `makelns.sh` to create all the links. It won't overwrite your files, but make sure you read it first to see what it's doing!
+## Installation
 
-# Vim Setup
+Clone this repo to `~/.dotfiles`:
 
-Install neovim and [vim-plug](https://github.com/junegunn/vim-plug). Run `:PlugInstall` to install all the vim plugins. Some of the plugins will require external programs.
+```
+$ git clone https://github.com/korylprince/dotfiles.git ~/.dotfiles
+```
 
-# zsh Setup
+[install.py](https://github.com/korylprince/dotfiles/blob/master/) will install symlinks different sets of dot files.
 
-Install zsh and [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), then have fun.
+```
+$ cd ~/.dotfiles
+$ ./install.py -h
+Usage: ./install.py [editor, shell, sway, all]
+```
 
-Optionally, `mkdir ~/.python` and run `virtualenv2 2` and `virtualenv 3` to enable `venv2` and `venv3` functions.
+## Sway Desktop Environment
 
-# Other Setup
+I use sway because it's a modern, composable tiling window manager that's easy to configure and style.
 
-Theres also files for awesomewm, and `.xinitrc`, so be careful!
+| Package | Purpose |
+| ------- | ------- |
+| gdm | login manager |
+| sway | wayland tiling window manager | 
+| swaybg | wallpaper manager |
+| swayidle & swaylock | idle/suspend/lock manager |
+| waybar | top bar (sway workspace management, task bar, indicators) |
+| network-manager-applet | network management |
+| swaynag | menus |
+| fuzzel | application launcher |
+| mako | notifications |
+| grim & slurp | screenshots |
+| gnome-terminal | terminal emulator |
 
-# Copyright Information
+## Solarized Theme
 
-License is Public Domain where available.
+I prefer the [Solarized](https://ethanschoonover.com/solarized/) Dark palette, and most of the UI components above are styled using the palette.
+
+For GTK apps, I've installed the [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) theme with the [solarized-dark style from adw-colors](https://github.com/lassekongo83/adw-colors/tree/main/themes/solarized-dark).
+
+## $SHELL
+
+I use zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
+
+## Development
+
+I develop using neovim with a few plugins, namely [coc.nvim](https://github.com/neoclide/coc.nvim) for language server integrations. Plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).

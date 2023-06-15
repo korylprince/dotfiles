@@ -1,6 +1,3 @@
 *.swp
 *.pyc
-.vim/bundle/*
-.vim/.netrwhist
 .config/nvim/plugged
-.config/nvim/.netrwhist

@@ -1,0 +1,76 @@
+* {
+    font-family: FontAwesome, Cantarell, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    transition: none;
+    background: none;
+}
+
+window {
+    color: #93a1a1;
+    background-color: rgba(0, 43, 54, 0.8);
+}
+
+tooltip {
+    background-color: #073642;
+}
+
+window widget > label, #workspaces, #tray {
+    margin: 0px 2px;
+    padding: 5px 5px;
+    min-width: 25px;
+    background-color: #073642;
+    border-radius: 12px;
+    border: 2px solid #657b83;
+}
+
+#workspaces {
+    padding: 0px 5px;
+}
+
+#workspaces button {
+    padding: 2px 10px;
+    color: #859900;
+    border-radius: 3.5px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+#workspaces button.focused, #workspaces button:hover {
+    color: #cb4b16;
+    background-color: #073642;
+    border-bottom: 2px solid #cb4b16;
+}
+
+#workspaces button.urgent {
+    color: #fdf6e3;
+    background-color: #dc322f;
+}
+
+#window {
+    border: none;
+    background: none;
+}
+
+#battery.charging, #battery.full {
+    color: #859900;
+}
+
+#battery.warning {
+    color: #b58900;
+}
+
+#battery.critical {
+    color: #dc322f;
+}
+
+#clock {
+    font-family: Roboto Mono;
+}
+
+#tray window {
+    background-color: #073642;
+}

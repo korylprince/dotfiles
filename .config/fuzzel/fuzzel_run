@@ -1,0 +1,110 @@
+#!/usr/bin/python3
+import configparser
+import functools
+import glob
+import locale
+import os
+import pathlib
+import re
+import shutil
+import subprocess
+import sys
+
+fuzzel_cache = os.path.join(pathlib.Path.home(), ".cache/fuzzel")
+
+system_app_dir = "/usr/share/applications/"
+user_app_dir = os.path.join(pathlib.Path.home(), ".local/share/applications/")
+
+def parse_applications(app_dir):
+    icons = {}
+    for app in glob.glob(app_dir + "*"):
+        # parse .desktop file
+        app_config = configparser.RawConfigParser()
+        app_config.read(app)
+
+        # parse icon
+        icon = ""
+        try:
+            icon = app_config["Desktop Entry"]["Icon"]
+        except KeyError:
+            pass
+        
+        # parse binary path
+        binpath = ""
+        try:
+            binpath = app_config["Desktop Entry"]["Exec"]
+            if binpath == "":
+                binpath = app_config["Desktop Entry"]["TryExec"]
+        except KeyError:
+            pass
+
+        # resolve absolute path
+        binpath = shutil.which(re.sub(" %[a-zA-Z]", "", binpath))
+
+        if binpath != "" and icon != "":
+            icons[binpath] = icon
+
+    return icons
+
+
+# parse application files
+icons = parse_applications(system_app_dir)
+icons.update(parse_applications(user_app_dir))
+
+# parse history
+history = []
+try:
+    with open(fuzzel_cache) as f:
+        history += [line.strip() for line in f.read().strip().splitlines()]
+except FileNotFoundError:
+    pass
+
+
+# parse all executables in $PATH
+seen = set(history)
+cmds = []
+for path in os.get_exec_path():
+    for cmd in os.listdir(path):
+        # filter non-executables and duplicates
+        if (not os.access(os.path.join(path, cmd), os.X_OK)) or cmd in seen:
+            continue
+        seen.add(cmd)
+
+        binpath = os.path.join(path, cmd)
+        if binpath in icons:
+            cmds.append(f"{cmd}\0icon\x1f{icons[binpath]}")
+        else:
+            cmds.append(cmd)
+
+# sort commands (like unix sort)
+locale.setlocale(locale.LC_ALL, ("en_US", "UTF-8"))
+cmds.sort(key=lambda c: functools.cmp_to_key(locale.strcoll)(c.replace("\0", "")))
+
+# add command history to start
+for cmd in history:
+    binpath = shutil.which(cmd)
+    if binpath in icons:
+        cmds.insert(0, f"{cmd}\0icon\x1f{icons[binpath]}")
+    else:
+        cmds.insert(0, cmd)
+
+# run fuzzel
+p = subprocess.run(["fuzzel", "--dmenu"], input=("\n".join(cmds)).encode("utf-8"), stdout=subprocess.PIPE)
+
+# get command output
+cmd = p.stdout.decode("utf-8").strip()
+
+if cmd == "":
+    sys.exit(p.returncode)
+
+# update history
+with open(fuzzel_cache, "w") as f:
+    if cmd in history:
+        history.remove(cmd)
+    history.append(cmd)
+    if len(history) > 15:
+        history = history[-15:]
+    f.write("\n".join(history))
+    f.write("\n")
+
+print(cmd)

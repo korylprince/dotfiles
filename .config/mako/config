@@ -1,0 +1,19 @@
+max-history=25
+on-button-middle=exec makoctl menu -n "$id" sh -c 'tac | xargs -I@ echo "-Z \"@\" '\''echo \"@\"'\''" | xargs swaynag -m "Select Notification Action"'
+default-timeout=10000
+ignore-timeout=1
+group-by=app-name
+
+font=Cantarell
+background-color=#073642f0
+border-color=#586e75ff
+border-radius=12
+text-color=#93a1a1ff
+
+[urgency=critical]
+text-color=#eee8d5ff
+border-color=#dc322fff
+ignore-timeout=0
+
+[app-name="Google Chrome"]
+ignore-timeout=1

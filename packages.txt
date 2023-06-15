@@ -1,0 +1,49 @@
+Development:
+    base-devel
+    bpython
+    git
+    neovim
+    nodejs
+    npm
+    (AUR) nvimpager
+    ripgrep
+
+Theme:
+    (AUR) adw-gtk3-git
+    dconf-editor
+    gnome-control-center
+    gnome-tweaks
+    noto-fonts-emoji
+    noto-fonts-extra
+    otf-font-awesome
+    ttf-font-awesome
+    (AUR) ttf-google-fonts-git
+    ttf-ms-fonts
+
+UI:
+    brightnessctl
+    fuzzel
+    fzf
+    gdm
+    gnome-terminal
+    grim
+    jq
+    mako
+    mesa
+    network-manager-applet
+    networkmanager
+    nm-connection-editor
+    pavucontrol
+    powerline-fonts
+    slurp
+    sway
+    swaybg
+    swayidle
+    swaylock
+    waybar
+    wayland
+    wl-clipboard
+    zsh
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    (AUR) zsh-vi-mode

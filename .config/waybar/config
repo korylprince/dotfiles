@@ -1,0 +1,75 @@
+{
+    "modules-left": ["sway/workspaces", "sway/scratchpad", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["pulseaudio", "backlight", "battery", "clock", "tray", "custom/power"],
+
+    "sway/workspaces": {
+        "disable-scroll": true
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "reverse-scrolling": true,
+        "on-click": "pavucontrol"
+    },
+    "backlight": {
+        "format": "💡 {percent}%",
+        "tooltip": false,
+        "reverse-scrolling": true
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S %Y-%m-%d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "months":     "<span color='#268bd2'><b>{}</b></span>",
+                "days":       "<span color='#839496'><b>{}</b></span>",
+                "weekdays":   "<span color='#859900'><b>{}</b></span>",
+                "today":      "<span color='#eee8d5'><b>{}</b></span>"
+            }
+        },
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "custom/power": {
+        "format":"⏻",
+        "tooltip": false,
+        "on-click": "swaynag -t warning -m 'Power Menu Options' -B 'Power Off' 'systemctl poweroff' -B 'Reboot' 'systemctl reboot' -B 'Suspend' 'swaymsg exec systemctl suspend' -B 'Sign Out' 'swaymsg exit'"
+    },
+}
