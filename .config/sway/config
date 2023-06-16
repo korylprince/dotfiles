@@ -3,7 +3,7 @@ default_border pixel 1
 font pango:Cantarell Regular 11
 output * bg ~/.config/sway/wallpaper.png fill
 
-client.focused #073642 #073642 #859900 #859900 #657b83
+client.focused #073642 #073642 #859900 #cb4b16 #859900
 client.unfocused #073642 #002b36 #93a1a1 #859900 #586e75
 client.focused_inactive #073642 #002b36 #93a1a1 #859900 #586e75
 client.urgent #073642 #073642 #dc322f #859900 #657b83
@@ -96,6 +96,9 @@ mouse_warping container
 # Close focused window
 bindsym $mod+Shift+c kill
 
+# Focus parent container
+bindsym $mod+a focus parent
+
 # Move container focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -108,6 +111,9 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
+# Reset width and height to 50%
+bindsym $mod+w resize set width 50 ppt, resize set height 50 ppt
+
 # Make the current focus fullscreen
 bindsym $mod+f fullscreen
 
@@ -115,6 +121,7 @@ bindsym $mod+f fullscreen
 bindsym $mod+m floating toggle
 
 # Split modes
+bindsym $mod+e split none
 bindsym $mod+s splith
 bindsym $mod+Shift+s splitv
 
