@@ -11,7 +11,8 @@
         "show-empty": false,
         "format-icons": ["", ""],
         "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+        "tooltip-format": "{app}: {title}",
+        "on-click": "swaymsg scratchpad show"
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"

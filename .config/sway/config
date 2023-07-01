@@ -130,7 +130,7 @@ bindsym $mod+space layout toggle tabbed splith splitv
 bindsym $mod+Shift+space layout toggle tabbed splitv splith
 
 # Scratchpad
-bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+Shift+minus move window to scratchpad
 bindsym $mod+minus scratchpad show
 
 ## Default floating apps
