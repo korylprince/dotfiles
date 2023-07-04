@@ -91,7 +91,6 @@ bindsym $mod+Shift+0 move container to workspace number 10
 # Mouse manipulation
 floating_modifier $mod normal
 focus_follows_mouse always
-mouse_warping container
 
 # Close focused window
 bindsym $mod+Shift+c kill
