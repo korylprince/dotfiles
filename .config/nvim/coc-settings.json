@@ -1,7 +1,6 @@
 {
     "vetur.ignoreProjectWarning": true,
     "eslint.autoFixOnSave": true,
-    "go.goplsPath": "/home/administrator/code/go/bin/gopls",
     "go.goplsArgs": ["-remote=auto"],
     "go.usePlaceholders": true
 }

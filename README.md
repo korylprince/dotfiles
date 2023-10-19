@@ -48,6 +48,14 @@ For GTK apps, I've installed the [adw-gtk3](https://github.com/lassekongo83/adw-
 
 I use zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh).
 
+# macOS
+
+The editor and shell dotfiles can also be used on macOS. I install the following brew packages:
+
+```
+brew install neovim nvimpager fzf ripgrep node nvm zsh-vi-mode zsh-syntax-highlighting zsh-autosuggestions
+```
+
 ## Development
 
 I develop using neovim with a few plugins, namely [coc.nvim](https://github.com/neoclide/coc.nvim) for language server integrations. Plugins are managed with [vim-plug](https://github.com/junegunn/vim-plug).
