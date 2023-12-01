@@ -6,8 +6,7 @@ import sys
 install_editor = (".config/nvim", )
 install_shell = (".zshrc", ".config/nvimpager")
 install_sway = (".config/environment.d", ".config/fontconfig", ".config/fuzzel", ".config/mako", ".config/sway", ".config/swaylock", ".config/swaynag", ".config/waybar",)
-
-install_all = install_editor + install_shell + install_sway
+install_yabai = (".config/yabai", ".config/skhd",)
 
 HOME = os.path.expanduser("~")
 
@@ -36,17 +35,17 @@ def install_links(links):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: ./install.py [editor, shell, sway, all]")
+        print("Usage: ./install.py [editor, shell, sway, yabai]")
         sys.exit(1)
 
     links = ({
         "editor": install_editor,
         "shell": install_shell,
         "sway": install_sway,
-        "all": install_all,
+        "yabai": install_yabai,
     }).get(sys.argv[1], None)
     if links is None:
-        print("Usage: ./install.py [editor, shell, sway, all]")
+        print("Usage: ./install.py [editor, shell, sway, yabai]")
         sys.exit(1)
 
     install_links(links)

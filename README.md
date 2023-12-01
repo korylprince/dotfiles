@@ -17,7 +17,7 @@ $ git clone https://github.com/korylprince/dotfiles.git ~/.dotfiles
 ```
 $ cd ~/.dotfiles
 $ ./install.py -h
-Usage: ./install.py [editor, shell, sway, all]
+Usage: ./install.py [editor, shell, sway, yabai]
 ```
 
 ## Sway Desktop Environment
@@ -54,6 +54,14 @@ The editor and shell dotfiles can also be used on macOS. I install the following
 
 ```
 brew install neovim nvimpager fzf ripgrep node nvm zsh-vi-mode zsh-syntax-highlighting zsh-autosuggestions
+```
+
+# yabai
+
+yabai is a tiling windows manager for macOS.
+
+```
+brew install yabai skhd
 ```
 
 ## Development
