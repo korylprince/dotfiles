@@ -42,3 +42,6 @@ shift + alt - 6 : yabai -m window --space 6;
 # control yabai
 ctrl + alt + shift - q : yabai --stop-service
 ctrl + alt + shift - r : yabai --restart-service || yabai --start-service
+
+# terminal shortcut
+alt - return : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
