@@ -65,3 +65,6 @@ nnoremap <silent> <space>e  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
 nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+
+" ArgWrap: wrap arguments
+nnoremap <silent> <leader>a :ArgWrap<CR>

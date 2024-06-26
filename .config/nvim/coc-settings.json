@@ -2,5 +2,8 @@
     "vetur.ignoreProjectWarning": true,
     "eslint.autoFixOnSave": true,
     "go.goplsArgs": ["-remote=auto"],
-    "go.usePlaceholders": true
+    "go.usePlaceholders": true,
+    "go.goplsOptions": {
+        "directoryFilters": ["-**/node_modules", "-**/rootless-runc/**"]
+    },
 }

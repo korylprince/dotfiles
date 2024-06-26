@@ -17,6 +17,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" Default: split right and below
+set splitright
+set splitbelow
+
 " Default: automatically insert on terminal
 autocmd TermOpen term://* startinsert
 
@@ -35,6 +39,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'FooSoft/vim-argwrap'
+Plug 'github/copilot.vim'
 call plug#end()
 
 
@@ -72,6 +78,9 @@ set updatetime=300
 
 " LanguageServer: Highlight the current symbol and its references
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" ArgWrap: Use trailing comma
+let g:argwrap_tail_comma = 1
 
 " include mappings
 source ~/.config/nvim/mappings.vim
