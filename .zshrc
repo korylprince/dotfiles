@@ -106,7 +106,7 @@ export GIT_PAGER="nvimpager"
 
 # use homebrew PATH
 [ -f /opt/homebrew/bin/brew ] &&
-    export PATH=/opt/homebrew/bin:$PATH
+    export PATH=/opt/homebrew/bin:/opt/homebrew/sbin:$PATH
 
 # go
 export PATH=/usr/local/go/bin:$(go env GOPATH)/bin:$PATH

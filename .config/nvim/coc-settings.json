@@ -3,7 +3,8 @@
     "eslint.autoFixOnSave": true,
     "go.goplsArgs": ["-remote=auto"],
     "go.usePlaceholders": true,
+    "python.pythonPath": "/opt/homebrew/bin/python3.12",
     "go.goplsOptions": {
         "directoryFilters": ["-**/node_modules", "-**/rootless-runc/**"]
-    },
+    }
 }
