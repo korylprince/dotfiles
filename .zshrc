@@ -90,6 +90,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 alias vim='nvim'
 alias vi='nvim'
 alias gnome-terminal='TERM=xterm-256color gnome-terminal'
+alias lg='lazygit'
 
 # share history
 setopt share_history
