@@ -146,6 +146,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] &&
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# use rbenv
+eval "$(rbenv init - --no-rehash zsh)"
+
 # local settings
 [ -f $HOME/.zshrc_local ] &&
     source $HOME/.zshrc_local
