@@ -102,7 +102,7 @@ setopt RM_STAR_WAIT
 export EDITOR=nvim
 export GIT_EDITOR=nvim
 export PAGER="nvimpager"
-export MANPAGER="nvimpager"
+export MANPAGER='nvim +Man!'
 export GIT_PAGER="nvimpager"
 
 # use homebrew PATH
