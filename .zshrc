@@ -146,8 +146,13 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -f /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ] &&
     source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# use rbenv
+# set up rbenv
 eval "$(rbenv init - --no-rehash zsh)"
+
+# set up pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # local settings
 [ -f $HOME/.zshrc_local ] &&

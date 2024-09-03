@@ -1,3 +1,4 @@
 return {
-  { "https://github.com/nvimdev/dashboard-nvim", enabled = false },
+	{ "nvimdev/dashboard-nvim", enabled = false },
+	{ "zbirenbaum/copilot-cmp", enabled = false },
 }
