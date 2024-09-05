@@ -62,10 +62,26 @@ return {
 		opts = {
 			servers = {
 				gopls = {
+					settings = {
+						gopls = {
+							gofumpt = false,
+						},
+						analyses = {
+							fieldalignment = false,
+						},
+					},
 					keys = {
 						{ "<F12>", '<cmd>TermExec direction=float cmd="go run ." name="go" <CR>', desc = "Go Run" },
 					},
 				},
+			},
+		},
+	},
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			formatters_by_ft = {
+				go = { "goimports", "gofmt" },
 			},
 		},
 	},
