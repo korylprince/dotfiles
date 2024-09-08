@@ -101,9 +101,9 @@ setopt RM_STAR_WAIT
 # Use nvim as editor
 export EDITOR=nvim
 export GIT_EDITOR=nvim
-export PAGER="nvimpager"
+export PAGER="nvimpager -p"
 export MANPAGER='nvim +Man!'
-export GIT_PAGER="nvimpager"
+export GIT_PAGER="nvimpager -p"
 
 # use homebrew PATH
 [ -f /opt/homebrew/bin/brew ] &&
