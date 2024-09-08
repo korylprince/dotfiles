@@ -8,6 +8,7 @@ vim.opt.relativenumber = false
 vim.opt.clipboard = ""
 vim.opt.mouse = ""
 vim.opt.scrolloff = 999
+vim.opt.wrap = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
