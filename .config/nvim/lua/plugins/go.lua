@@ -20,7 +20,7 @@ return {
     },
 
     {
-        "korylprince/nvim-goc.lua",
+        "rafaelsq/nvim-goc.lua",
         dependencies = {
             "ray-x/go.nvim",
         },

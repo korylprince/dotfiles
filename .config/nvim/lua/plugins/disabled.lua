@@ -1,10 +1,7 @@
 return {
     { "nvimdev/dashboard-nvim", enabled = false },
-    { "echasnovski/mini.pairs", enabled = false },
+    { "nvim-mini/mini.pairs", enabled = false },
     { "stevearc/conform.nvim", enabled = false },
-    { "tpope/vim-dadbod", enabled = false },
-    { "kristijanhusak/vim-dadbod-ui", enabled = false },
-    { "kristijanhusak/vim-dadbod-completion", enabled = false },
     {
         "neovim/nvim-lspconfig",
         opts = {
@@ -13,4 +10,10 @@ return {
             },
         },
     },
+    {
+        "folke/snacks.nvim",
+        opts = {
+            dashboard = { enabled = false },
+        },
+    }
 }
